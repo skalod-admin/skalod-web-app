@@ -1,5 +1,6 @@
 import React from 'react'
 import coverImage from '../utils/cover.jpeg';
+import Header from './Header';
 const Body = () => {
   return (
     <div className="fullscreen"> 

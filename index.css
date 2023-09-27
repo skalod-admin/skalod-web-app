@@ -1,13 +1,13 @@
-body, html {
+html, body {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
 .fullscreen {
-    position: relative;
+    /* position: relative; */
     width: 100%;
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -24,25 +24,49 @@ img {
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
+    z-index: 1;
 }
 
-h1 {
-    font-size: 3em;
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* This will create space between Logo and ul */
+    padding: 10px; /* Adjust this value to control the space around the Logo and ul */
+    box-sizing: border-box; /* Include padding in the width */
+    z-index: 2;
 }
 
-.header {
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.logo {
-    max-height: 50px; /* Adjust as needed */
+.logo{
+    width: 70px;
 }
 
-.company-info {
-    color: white;
-    text-align: right;
+.nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.nav li{
+    padding: 0 10px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #0e0707;
+    font-weight: bold;
+    font-size: 18px;
 }
