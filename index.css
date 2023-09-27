@@ -28,15 +28,24 @@ img {
 }
 
 .header{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     display: flex;
-    justify-content: space-between; /* This will create space between Logo and ul */
-    padding: 10px; /* Adjust this value to control the space around the Logo and ul */
-    box-sizing: border-box; /* Include padding in the width */
-    z-index: 2;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1.3rem 0;
+    background: #fff;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.03) 6%, rgba(0, 0, 0, 0.251) 51%);
+    color: #fff;
+    transition: background-color 0.25s ease-in;
+}
+
+.header.active {
+    background: none;
+    background-color: #fff;
+    box-shadow: 0px 0px 9px 2px #0808081f;
+
 }
 
 .container{
@@ -47,16 +56,32 @@ img {
 
 .logo-container{
     display: flex;
+    color: #fff;
+    align-items: center;
+}
+
+.header.active .logo-container{
+    display: flex;
+    color: #083b66;
     align-items: center;
 }
 
 .logo{
     width: 70px;
+    padding: 0 1rem;
+}
+
+nav {
+    color: #fff;
+}
+
+.header.active nav {
+    color: #083b66;
 }
 
 .nav ul {
     list-style: none;
-    padding: 0;
+    padding-right: 1rem;
     display: flex;
 }
 
@@ -66,7 +91,20 @@ img {
 
 .nav a {
     text-decoration: none;
-    color: #0e0707;
+    color:inherit;
     font-weight: bold;
     font-size: 18px;
+
+    &::after {
+    content: "";
+    color: #007bff;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 0.15rem;
+    background-color: rgba(255, 255, 255, 0.795);
+    transition: width 0.2s ease-in-out;
+    }
 }
